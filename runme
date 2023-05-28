@@ -1,0 +1,9 @@
+docker build . -t myompi
+
+docker run --rm --user=root -it -v $(pwd):/project mfisherman/openmpi
+
+
+mpiexec --allow-run-as-root python3 count_all_reduce.py 
+mpiexec --allow-run-as-root python3 count_ipc.py 
+nslookup c -type=a
+nslookup c -type=ns
